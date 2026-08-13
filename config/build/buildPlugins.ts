@@ -16,6 +16,10 @@ const websocketUrl =
     process.env.WEBSOCKET_URL ||
     'ws://localhost:8000/graphql/subscription/';
 
+const backendUrl =
+    process.env.BACKEND_URL ||
+    'http://localhost:8000';
+
 export function buildPlugins({mode, paths, analyzer}: BuildOptions): Configuration['plugins'] {
     const isDev = mode === 'development'
     const isProd = mode === 'production'
@@ -30,6 +34,7 @@ export function buildPlugins({mode, paths, analyzer}: BuildOptions): Configurati
         new webpack.DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),
 
+            __BACKEND_URL__: JSON.stringify(backendUrl),
             __GRAPHENE_URL__: JSON.stringify(grapheneUrl),
             __STRAWBERRY_URL__: JSON.stringify(strawberryUrl),
             __WEBSOCKET_URL__: JSON.stringify(websocketUrl)

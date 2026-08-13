@@ -6,7 +6,7 @@ import { IUser } from "@/types/User/APITypes";
 
 export const chatAPI = createApi({
     reducerPath: "chatAPI",
-    baseQuery: graphqlBaseQuery({ baseUrl: "http://localhost:8000/graphql/graphene/" }),
+    baseQuery: graphqlBaseQuery({ baseUrl: __GRAPHENE_URL__ }),
     tagTypes: ["Chatroom", "User"],
     endpoints: (builder) => ({
         chatroomCreate: builder.mutation<IChatroom, { avatar: File | null, name: string, users: IChatroomCreateArgs}>({

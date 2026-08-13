@@ -32,7 +32,7 @@ function Settings() {
 
     const handleExit = () => {
         setUserLogout(dispatch)
-        fetch(`${__BACKEND_URL__}/delete-http-only-cookie/`,
+        fetch('fetch(`${__BACKEND_URL__}/delete-http-only-cookie/`',
             { 
                 method: 'GET', 
                 credentials: 'include' 

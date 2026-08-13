@@ -71,7 +71,7 @@ const ChatItem = memo(({ chatItem }: { chatItem: IChatItem }) => {
     return (
         <ChatLink 
             key={chatItem.id} 
-            avatar={chatItem.avatar && `http://localhost:8000/media/${chatItem.avatar}`} 
+            avatar={chatItem.avatar && `${__BACKEND_URL__}/media/${chatItem.avatar}`}
             name={chatItem.name} 
             lastMessage={lastMsg?.getMessages[0]?.text || ''} 
             time={lastMsg?.getMessages[0]?.createdAt ? 

@@ -6,7 +6,7 @@ import { IGetMessages } from "@/types/Message/APIType";
 
 export const messageAPI = createApi({
   reducerPath: "messageAPI",
-  baseQuery: graphqlBaseQuery({ baseUrl: __STRAWBERRY_URL__ }),
+  baseQuery: graphqlBaseQuery({ baseUrl: __STRAWBERRY_URL__}),
   tagTypes: ["Chatroom", "User", "Message"],
   endpoints: (builder) => ({
     sendMessage: builder.mutation<IMessage, { accessToken: string; chatroomName: string; text: string }>({

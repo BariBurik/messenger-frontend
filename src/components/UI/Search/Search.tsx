@@ -59,7 +59,7 @@ function Search({query, onChange, placeholder, searchResultSize="fullScreen", se
                 setSearchResult(prev => [...prev, {
                     id: user.id, 
                     name: user.name, 
-                    avatar: `${user.avatar && `http://localhost:8000/media/${user.avatar}`}`
+                    avatar: `${user.avatar && `${__BACKEND_URL__}/media/${user.avatar}`}`
                 }])
             })
         }

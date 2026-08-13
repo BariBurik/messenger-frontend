@@ -18,6 +18,7 @@ declare module '*.svg' {
 
 declare const __PLATFORM__: 'desktop' | 'mobile';
 
+declare const __BACKEND_URL__: string;
 declare const __GRAPHENE_URL__: string;
 declare const __STRAWBERRY_URL__: string;
 declare const __WEBSOCKET_URL__: string;
