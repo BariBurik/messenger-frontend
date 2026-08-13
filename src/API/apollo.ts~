@@ -33,7 +33,7 @@ const httpLink = ApolloLink.split(
 
 // Создание WebSocket-соединения для подписок
 const wsLink = new WebSocketLink({ 
-    uri: __WEBSOCKET_URL__,
+    uri: `ws://localhost:8000/graphql/subscription/`, 
     options: { 
         reconnect: true,
         // Используем тот же подход с cookie, что и для HTTP запросов

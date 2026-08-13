@@ -28,12 +28,12 @@ export function buildPlugins({mode, paths, analyzer}: BuildOptions): Configurati
     const plugins: Configuration['plugins'] = [
         new HtmlWebpackPlugin({template: paths.html}),
         new webpack.DefinePlugin({
-            __PLATFORM__: JSON.stringify(platform),
+    __PLATFORM__: JSON.stringify(platform),
 
-            __GRAPHENE_URL__: JSON.stringify(grapheneUrl),
-            __STRAWBERRY_URL__: JSON.stringify(strawberryUrl),
-            __WEBSOCKET_URL__: JSON.stringify(websocketUrl)
-        })
+    __GRAPHENE_URL__: JSON.stringify(grapheneUrl),
+    __STRAWBERRY_URL__: JSON.stringify(strawberryUrl),
+    __WEBSOCKET_URL__: JSON.stringify(websocketUrl)
+})
     ]
 
     if(isDev) { 
