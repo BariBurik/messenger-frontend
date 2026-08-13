@@ -6,7 +6,7 @@ The application provides user authentication, chat management and real-time mess
 
 The backend is available in a separate repository:
 
-**[Messenger Fullstack Backend](https://github.com/BariBurik/Messenger_Fullstack_Backend)**
+**[messenger-backend](https://github.com/BariBurik/messenger-backend)**
 
 ## Features
 
@@ -80,7 +80,7 @@ The application communicates with the backend through separate GraphQL endpoints
 
 The frontend requires the backend part of the project:
 
-[Messenger Fullstack Backend](https://github.com/BariBurik/Messenger_Fullstack_Backend)
+[messenger-backend](https://github.com/BariBurik/messenger-backend)
 
 Follow the backend repository instructions to configure PostgreSQL, apply Django migrations and start the backend server.
 
