@@ -1,6 +1,6 @@
 import { useUserReLoginQuery } from "@/store";
 import AppRouter from "../AppRouter";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAppDispatch } from "@/hooks/redux";
 import { setUserAuth } from "@/store/ActionCreators/User";
 import { checkAndSetCSRFToken } from "@/services/checkAndSetCookie";
