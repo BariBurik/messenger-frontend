@@ -34,7 +34,7 @@ function Message({children, direction, time, avatar}: MessageProps) {
                     <div className={styles.message_reverse_time}>{time}</div>
                     <p>{children}</p>
                 </div>
-                <img src={avatar ? getMediaUrl(avatar) : guest} className={styles.users_avatar} alt=""/>
+                <img src={`${avatar ? `${__BACKEND_URL__}/media/${avatar}` : guest}`} className={styles.users_avatar}/>
             </div>
         );
     }

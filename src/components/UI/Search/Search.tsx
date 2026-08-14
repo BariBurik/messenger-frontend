@@ -56,11 +56,14 @@ function Search({query, onChange, placeholder, searchResultSize="fullScreen", se
         if (data?.getUsersPerQuery) {
             setSearchResult([])
             data.getUsersPerQuery.map(user => {
-                setSearchResult(prev => [...prev, {
-                    id: user.id, 
-                    name: user.name, 
-                    avatar: `${user.avatar && `${__BACKEND_URL__}/media/${user.avatar}`}`
-                }])
+                setSearchResult(prev => [
+                    ...prev,
+                    {
+                        id: user.id,
+                        name: user.name,
+                        avatar: user.avatar
+                    }
+                ]);
             })
         }
         if (!query) {
@@ -74,7 +77,7 @@ function Search({query, onChange, placeholder, searchResultSize="fullScreen", se
             {query && data.getUsersPerQuery.length > 0 && <div ref={resultRef} className={`${styles.search_result} ${styles[searchResultSize]} ${isMobile && styles.mobile}`}>
                 {searchResult.map(user => (
                     <div onClick={() => handeClickToItem(user.id, user.name)} key={user.id} className={styles.search_result_item}>
-                        <Avatar/>
+                        <Avatar avatar={user.avatar}/>
                         <p className={styles.search_result_name}>{user.name}</p>
                     </div>
                 ))}

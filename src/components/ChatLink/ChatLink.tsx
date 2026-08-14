@@ -15,8 +15,6 @@ function Chat({avatar, name, lastMessage, time}: ChatProps) {
     const userAgent = navigator.userAgent || ''; 
     const isMobile = /android|ios|iphone|ipad|ipod/i.test(userAgent.toLowerCase());
     const linkRef = useRef<HTMLAnchorElement>(null)
-
-    const pathToAvatar = avatar.split('/media/')[1];
     
     const {name: chatName} = useParams()
 
@@ -31,7 +29,7 @@ function Chat({avatar, name, lastMessage, time}: ChatProps) {
     if (isMobile) {
         return ( 
             <Link to={`/chat/${name}`} ref={linkRef} className={styles.mobile_chat}>
-                <Avatar avatar={pathToAvatar !== undefined ? avatar : ""}/>
+                <Avatar avatar={avatar}/>
                 <div className={styles.mobile_text}>
                     <div className={styles.mobile_top_row}>
                         <div className={styles.mobile_username}>{name}</div>

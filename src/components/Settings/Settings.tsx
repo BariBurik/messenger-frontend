@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/hooks/redux';
 import { RootState } from '@/store';
 import { setUserLogout } from '@/store/ActionCreators/User';
-import { guest } from '../../../public/guest.jpg'
 
 function Settings() {
 
@@ -16,8 +15,6 @@ function Settings() {
     const dispatch = useAppDispatch()
 
     const avatar = useSelector((state: RootState) => state.user.avatar)
-
-    const pathToAvatar = avatar.split('media/')[1]
 
     const [isOpen, setIsOpen] = useState(false)
     
@@ -42,12 +39,10 @@ function Settings() {
             .catch(error => console.error('Error:', error));
     }
 
-    console.log(pathToAvatar)
-
     return ( 
         <div className={styles.settings}>
             <div onClick={(e) => {handleAvatarOnClick(e)}} className={styles.user}>
-                <Avatar avatar={pathToAvatar ? avatar : guest} />
+                <Avatar avatar={avatar} />
             </div>
             <ProfileModal setIsOpen={setIsOpen} isOpen={isOpen}/>
             <div onClick={handleExit} className={styles.exit}><Exit className={styles.exit}/></div>

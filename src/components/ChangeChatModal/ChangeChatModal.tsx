@@ -53,7 +53,7 @@ export function ChangeChatModal({isOpen, setIsOpen}: ChangeChatModalProps) {
             setChatName(currentChat.name)
         }
         if (currentChat.avatar) {
-            setImage(`${__BACKEND_URL__}/media/${currentChat.avatar}`)
+            setImage(currentChat.avatar)
         }
     }, [currentChat]);
 

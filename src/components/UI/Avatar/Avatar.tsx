@@ -1,13 +1,18 @@
 import styles from "./Avatar.module.scss";
-import guest from "../../../../public/guest.jpg"
+import guest from "../../../../public/guest.jpg";
+import { getMediaUrl } from "@/services/getMediaUrl";
 
 interface AvatarProps {
-    avatar?: string
+    avatar?: string | null;
 }
 
-function Avatar({avatar}: AvatarProps) {
-    return ( 
-        <img className={styles.avatar} src={avatar === undefined || avatar === null || avatar === "" ? guest : avatar} alt="" />
+function Avatar({ avatar }: AvatarProps) {
+    return (
+        <img
+            className={styles.avatar}
+            src={avatar ? getMediaUrl(avatar) : guest}
+            alt=""
+        />
     );
 }
 
