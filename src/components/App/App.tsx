@@ -34,7 +34,11 @@ export const App = () => {
     useEffect(() => {
         if (userData && initialLoad.current) {
             let user = userData.userReLogin.user
-            user = {...user, avatar: `${__BACKEND_URL__}${user.avatar}`}
+            user = {
+                ...user,
+                avatar: user.avatar
+                    ? `${__BACKEND_URL__}/media/${user.avatar}` : ''
+                }
             setUserAuth(dispatch, user, userData.userReLogin.tempToken)
             initialLoad.current = false;
         }
