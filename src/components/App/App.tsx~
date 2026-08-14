@@ -41,8 +41,8 @@ export const App = () => {
     }, [userData])
 
     if (!csrfReady) {
-    return null;
-}
+        return null;
+    }
 
     return ( 
         <AppRouter isLoading={isLoadingUser}/>
