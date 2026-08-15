@@ -80,14 +80,14 @@ function LoginOrRegPage() {
             <div className={styles.login_or_reg}>
                 <h1>{isReg ? "Sign up" : "Sign in"}</h1>
                 {isReg ? <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your username"/> : <></>}
-                <p ref={nameWrongRef} className={`${styles.warning} ${styles.hidden}`}>Введите имя пользователя</p>
+                <p ref={nameWrongRef} className={`${styles.warning} ${styles.hidden}`}>Enter your username</p>
                 <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email"/>
-                <p ref={emailWrongRef} className={`${styles.warning} ${styles.hidden}`}>Введите почту</p>
+                <p ref={emailWrongRef} className={`${styles.warning} ${styles.hidden}`}>Enter your email</p>
                 <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password"/>
-                <p ref={passwordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Введите пароль</p>
-                <p ref={checkPasswordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Пароли не совпадают</p>
+                <p ref={passwordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Enter your password</p>
+                <p ref={checkPasswordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Passwords don't match</p>
                 {isReg ? <PasswordInput value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} placeholder="Confirm password"/> : <></>}
-                <p ref={checkPasswordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Пароли не совпадают</p> 
+                <p ref={checkPasswordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Passwords don't match</p>
                 {<p className={styles.switch} onClick={() => setIsReg(!isReg)}>{isReg ? "Already have an account?" : "Don't have an account yet?"}</p>}
                 <div className={styles.button}><Button onClick={handleRegOrLogin}>{isReg ? "Sign up" : "Sign in"}</Button></div>
                 <ErrorPopup visible={errorVisibale} setVisible={setErrorVisibale} message={errorMessage} setMessage={setErrorMessage} />
