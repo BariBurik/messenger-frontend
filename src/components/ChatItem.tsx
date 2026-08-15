@@ -24,7 +24,7 @@ const ChatItem = memo(({ chatItem }: { chatItem: IChatItem }) => {
                 chatroomNames: [chatItem.name] // Подписываемся только на один чат
             },
             onSubscriptionData: ({ subscriptionData }) => {
-                console.log('Новое сообщение в чате:', chatItem.name, subscriptionData);
+                console.log('New message in chat:', chatItem.name, subscriptionData);
                 if (subscriptionData?.data?.chatroomMessage) {
                     // Обновляем время
                     chatItem.onTimeUpdate(subscriptionData.data.chatroomMessage.createdAt);
@@ -49,7 +49,7 @@ const ChatItem = memo(({ chatItem }: { chatItem: IChatItem }) => {
         }
 
         // Массив дней недели
-        const weekDays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         return weekDays[messageDate.getDay()];
     }
 

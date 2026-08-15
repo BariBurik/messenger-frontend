@@ -31,7 +31,7 @@ function Chat({value, setValue}: BottomChatsBarProps) {
         <div className={styles.chat}>
             <TopChatsBar chatsName={chatName} isOpen={isOpen} setIsOpen={setIsOpen} />
             <MessageWindow/>
-            <BottomChatsBar callback={handleSendMessage} value={value} setValue={setValue} placeholder="Написать сообщение..." />
+            <BottomChatsBar callback={handleSendMessage} value={value} setValue={setValue} placeholder="Type a message..." />
         </div>
      );
 }

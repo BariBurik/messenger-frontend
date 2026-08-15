@@ -123,12 +123,12 @@ function MessageWindow() {
         yesterday.setDate(yesterday.getDate() - 1);
 
         if (date.toDateString() === today.toDateString()) {
-            return 'Сегодня';
+            return 'Today';
         }
         if (date.toDateString() === yesterday.toDateString()) {
-            return 'Вчера';
+            return 'Yesterday';
         }
-        return date.toLocaleDateString('ru-RU', { 
+        return date.toLocaleDateString('en-US', {
             day: 'numeric',
             month: 'long'
         });

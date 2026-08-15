@@ -29,14 +29,14 @@ function LoginOrRegPage() {
                 userRegister({name, email, password});
             } else {
                 setErrorVisibale(true)
-                setErrorMessage("Заполните все поля")
+                setErrorMessage("Please fill in all fields")
             }
         } else {
             if (email && password) {
                 userLogin({email, password});
             } else {
                 setErrorVisibale(true)
-                setErrorMessage("Заполните все поля")
+                setErrorMessage("Please fill in all fields")
             }
         }
     }
@@ -78,18 +78,18 @@ function LoginOrRegPage() {
     return (
         <div className={styles.container}>
             <div className={styles.login_or_reg}>
-                <h1>{isReg ? "Регистрация" : "Вход"}</h1>
-                {isReg ? <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Имя пользователя"/> : <></>}
+                <h1>{isReg ? "Sign up" : "Sign in"}</h1>
+                {isReg ? <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your username"/> : <></>}
                 <p ref={nameWrongRef} className={`${styles.warning} ${styles.hidden}`}>Введите имя пользователя</p>
-                <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Электронная почта"/>
+                <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email"/>
                 <p ref={emailWrongRef} className={`${styles.warning} ${styles.hidden}`}>Введите почту</p>
-                <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Пароль"/>
+                <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password"/>
                 <p ref={passwordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Введите пароль</p>
                 <p ref={checkPasswordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Пароли не совпадают</p>
-                {isReg ? <PasswordInput value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} placeholder="Повторите пароль"/> : <></>}
+                {isReg ? <PasswordInput value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} placeholder="Confirm password"/> : <></>}
                 <p ref={checkPasswordWrongRef} className={`${styles.warning} ${styles.hidden}`}>Пароли не совпадают</p> 
-                {<p className={styles.switch} onClick={() => setIsReg(!isReg)}>{isReg ? "Уже есть аккаунт?" : "Еще нет аккаунта?"}</p>}
-                <div className={styles.button}><Button onClick={handleRegOrLogin}>{isReg ? "Зарегистрироваться" : "Войти"}</Button></div>
+                {<p className={styles.switch} onClick={() => setIsReg(!isReg)}>{isReg ? "Already have an account?" : "Don't have an account yet?"}</p>}
+                <div className={styles.button}><Button onClick={handleRegOrLogin}>{isReg ? "Sign up" : "Sign in"}</Button></div>
                 <ErrorPopup visible={errorVisibale} setVisible={setErrorVisibale} message={errorMessage} setMessage={setErrorMessage} />
             </div>
         </div>

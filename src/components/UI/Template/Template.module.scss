@@ -8,5 +8,10 @@
     height: 100vh;
     background-color: aliceblue;
     color: black;
-    background-image: url("../../../../public/background.png");
+    background: linear-gradient(
+        135deg;
+        #f8fafc 0%,
+        #eef6ff 50%,
+        #f5f9ff 100%
+    );
 }

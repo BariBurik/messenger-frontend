@@ -15,7 +15,7 @@ function FileImput({setImage, setNewAvatar}: FileImputProps) {
     return ( 
         <div className={styles.file_input_container}>
             <input type="file" id="fileInput" className={styles.file_input} onChange={handleImageChange}/>
-            <label htmlFor="fileInput" className={styles.file_label}>Выберите аватар</label>
+            <label htmlFor="fileInput" className={styles.file_label}>Choose avatar</label>
         </div>
 
     );

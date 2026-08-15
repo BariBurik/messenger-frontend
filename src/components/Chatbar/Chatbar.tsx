@@ -45,7 +45,7 @@ function Chatbar() {
                 handleSubscriptionData(subscriptionData?.data?.newChatroom);
             },
             onError: (error) => {
-                console.error('Ошибка подписки на новые чаты:', error);
+                console.error('New chat subsription error:', error);
             }
         }
     );
@@ -61,7 +61,7 @@ function Chatbar() {
                 handleSubscriptionData(subscriptionData?.data?.updatedChatroom);
             },
             onError: (error) => {
-                console.error('Ошибка подписки на обновления чатов:', error);
+                console.error('Chat update subsription error:', error);
             }
         }
     );
@@ -77,7 +77,7 @@ function Chatbar() {
                 handleSubscriptionData(subscriptionData?.data?.deletedChatroom);
             },
             onError: (error) => {
-                console.error('Ошибка подписки на удаление чатов:', error);
+                console.error('Chat deletion subsription error:', error);
             }
         }
     );
@@ -114,7 +114,7 @@ function Chatbar() {
                 }
             </div>
             <button onClick={() => setIsOpen(true)} className={`${isMobile ? styles.mobile_button : styles.button}`}>
-                Создать чат
+                Create chat
             </button>
             <CreateChatModal isOpen={isOpen} setIsOpen={setIsOpen}/>
         </div>

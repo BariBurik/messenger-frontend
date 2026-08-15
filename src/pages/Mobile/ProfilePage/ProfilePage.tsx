@@ -50,12 +50,12 @@ function ProfilePage() {
         <div className={styles.constainer}>
             <div className={styles.profile}>
                 <div className={styles.header}>
-                    <h2>Профиль</h2>  
+                    <h2>Profile</h2>
                 </div>
                 <div className={styles.body}>
-                    <Input value={newname} onChange={(e) => setNewname(e.target.value)} placeholder="Имя пользователя"/>
-                    <Input value={newEmail} onChange={(e) => setNewEmail(e.target.value)} placeholder="Электронная почта"/>
-                    <Input value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder="Пароль"/>
+                    <Input value={newname} onChange={(e) => setNewname(e.target.value)} placeholder="Username"/>
+                    <Input value={newEmail} onChange={(e) => setNewEmail(e.target.value)} placeholder="Email"/>
+                    <Input value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder="Password"/>
                     {!image && <FileInput setNewAvatar={setNewAvatar} setImage={setImage}/>}
                     <div className={styles.avatar_container}>
                             {image && <Avatar avatar={image} />}
@@ -63,7 +63,7 @@ function ProfilePage() {
                     </div>
                 </div>
                 <div className={styles.footer}>
-                    <Button onClick={handleChange}>Сохранить</Button>
+                    <Button onClick={handleChange}>Save changes</Button>
                 </div>
             </div>
         </div>

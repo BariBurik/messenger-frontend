@@ -78,17 +78,17 @@ function CreateChatModal({isOpen, setIsOpen}: CreateChatModalProps) {
             <Modal setIsOpen={setIsOpen} isOpen={isOpen}>
                 <div className={styles.chat_modal}>
                     <div className={styles.header}>
-                        <h2>Создание чата</h2>  
+                        <h2>Chat create</h2>
                     </div>
                     <div className={styles.body}>
-                        <Input value={chatName} onChange={(e) => setChatName(e.target.value)} placeholder="Название чата"/>
-                        <Search setWrongVisible={setWrongVisibale} selected={selected} setSelected={setSelected} searchResultSize="small" query={participants} onChange={(e) => setParticipants(e.target.value)} placeholder="Имя пользователя"/>
+                        <Input value={chatName} onChange={(e) => setChatName(e.target.value)} placeholder="Chat name"/>
+                        <Search setWrongVisible={setWrongVisibale} selected={selected} setSelected={setSelected} searchResultSize="small" query={participants} onChange={(e) => setParticipants(e.target.value)} placeholder="Username"/>
                         <div className={styles.selected_users}>
                             {selected.map((user, index) => (
                                 <SelectedUser key={index} id={user.id} username={user.name} callback={deleteUserFromSelected} />
                             ))}
                         </div>
-                        {wrongVisibale && <p className={styles.warning}>Максимальное количество участников чата 8</p>}
+                        {wrongVisibale && <p className={styles.warning}>A chat may have up to 8 participants</p>}
                         {!image && <FileInput setNewAvatar={setNewAvatar} setImage={setImage}/>}
                         <div className={styles.avatar_container}>
                                 {image && <Avatar avatar={image} />}
@@ -96,7 +96,7 @@ function CreateChatModal({isOpen, setIsOpen}: CreateChatModalProps) {
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        <Button onClick={handleCreate}>Создать</Button>
+                        <Button onClick={handleCreate}>Create</Button>
                     </div>
                 </div>
             </Modal>
