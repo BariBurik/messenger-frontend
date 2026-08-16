@@ -48,7 +48,7 @@ function ProfileModal({setIsOpen, isOpen}: ProfileProps) {
             <Modal setIsOpen={setIsOpen} isOpen={isOpen}>
                 <div className={styles.profile_modal}>
                     <div className={styles.header}>
-                        <h2>Profile</h2>
+                        <h2>Профиль</h2>  
                     </div>
                     <div className={styles.body}>
                         <Input value={newname} onChange={(e) => setNewname(e.target.value)} placeholder="Username"/>
